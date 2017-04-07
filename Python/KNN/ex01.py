@@ -88,13 +88,13 @@ print('\n\nPlotanto caso de teste: [%2.4f %2.4f].\n' % (x_teste[0], x_teste[1]))
 
 #  Visualizando o caso de teste junto com os dados
 #   plot(x_teste[0], x_teste[1], 'ks', 'MarkerFaceColor', 'g', 'MarkerSize', 7);
-pos = [i for i, yi in enumerate(Y) if not yi]
-neg = [i for i, yi in enumerate(Y) if yi]
+pos = [i for i, yi in enumerate(Y) if yi]
+neg = [i for i, yi in enumerate(Y) if not yi]
 plot_pos = [X[i] for i in pos]
 plot_neg = [X[i] for i in neg]
 fig = plt.figure()
 sub_fig = fig.add_subplot(111)
-sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Setosa/Virginica (+)')
+sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Setosa (+)')
 sub_fig.scatter([pni[0] for pni in plot_neg], [pni[1] for pni in plot_neg], c='b', marker='+', linewidth=2, label = 'Iris Versicolour (-)')
 sub_fig.scatter(x_teste[0], x_teste[1], c='g', marker='s', label = 'Test', s=20)
 plt.xlabel('Comprimento da petala (cm)');
@@ -148,20 +148,20 @@ else:
 print('Plotanto o(s) %d-vizinho(s) mais proximo(s) usado(s) na classificacao.\n\n' % K);
 
 #  Visualizando o caso de teste junto com os dados
-pos = [i for i, yi in enumerate(Y) if not yi]
-neg = [i for i, yi in enumerate(Y) if yi]
+pos = [i for i, yi in enumerate(Y) if yi]
+neg = [i for i, yi in enumerate(Y) if not yi]
 plot_pos = [X[i] for i in pos]
 plot_neg = [X[i] for i in neg]
 
-plot_pos_ind = [X[i] for i in ind_viz if not Y[i]]
-plot_neg_ind = [X[i] for i in ind_viz if Y[i]]
+plot_pos_ind = [X[i] for i in ind_viz if Y[i]]
+plot_neg_ind = [X[i] for i in ind_viz if not Y[i]]
 
 fig = plt.figure()
 sub_fig = fig.add_subplot(111)
 
 sub_fig.scatter(x_teste[0], x_teste[1], c='g', marker='s', label = 'Test')
 
-sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Setosa/Virginica (+)')
+sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Setosa (+)')
 sub_fig.scatter([pni[0] for pni in plot_neg], [pni[1] for pni in plot_neg], c='b', marker='+', linewidth=2, label = 'Iris Versicolour (-)')
 
 sub_fig.scatter([ppi[0] for ppi in plot_pos_ind], [ppi[1] for ppi in plot_pos_ind], c='k', marker='*')
@@ -233,20 +233,20 @@ vd.visualizarDados(X,Y);
 
 #  Definicao de outro caso de teste.
 #-------------------
-x_teste = [5.9, 2.84]; #Voce pode testar outros valores
+x_teste = [6.2, 3.4]; #Voce pode testar outros valores
 #-------------------
 
 print('\n\nPlotanto caso de teste: [%2.4f %2.4f].\n' % (x_teste[0], x_teste[1]));
 
 #  Visualizando o caso de teste junto com os dados
 #plot(x_teste(1, 1), x_teste(1, 2), 'ks', 'MarkerFaceColor', 'g', 'MarkerSize', 7);
-pos = [i for i, yi in enumerate(Y) if not yi]
-neg = [i for i, yi in enumerate(Y) if yi]
+pos = [i for i, yi in enumerate(Y) if yi]
+neg = [i for i, yi in enumerate(Y) if not yi]
 plot_pos = [X[i] for i in pos]
 plot_neg = [X[i] for i in neg]
 fig = plt.figure()
 sub_fig = fig.add_subplot(111)
-sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Setosa/Virginica (+)')
+sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Virginica (+)')
 sub_fig.scatter([pni[0] for pni in plot_neg], [pni[1] for pni in plot_neg], c='b', marker='+', linewidth=2, label = 'Iris Versicolour (-)')
 sub_fig.scatter(x_teste[0], x_teste[1], c='g', marker='s', label = 'Test', s=20)
 plt.xlabel('Comprimento da petala (cm)');
@@ -288,20 +288,20 @@ else:
 
 print('Plotanto o(s) %d-vizinho(s) mais proximo(s) usado(s) na classificacao.\n\n' % K);
 
-pos = [i for i, yi in enumerate(Y) if not yi]
-neg = [i for i, yi in enumerate(Y) if yi]
+pos = [i for i, yi in enumerate(Y) if yi]
+neg = [i for i, yi in enumerate(Y) if not yi]
 plot_pos = [X[i] for i in pos]
 plot_neg = [X[i] for i in neg]
 
-plot_pos_ind = [X[i] for i in ind_viz if not Y[i]]
-plot_neg_ind = [X[i] for i in ind_viz if Y[i]]
+plot_pos_ind = [X[i] for i in ind_viz if Y[i]]
+plot_neg_ind = [X[i] for i in ind_viz if not Y[i]]
 
 fig = plt.figure()
 sub_fig = fig.add_subplot(111)
 
 sub_fig.scatter(x_teste[0], x_teste[1], c='g', marker='s', label = 'Test')
 
-sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Setosa/Virginica (+)')
+sub_fig.scatter([ppi[0] for ppi in plot_pos], [ppi[1] for ppi in plot_pos], c='r', marker='o', label = 'Iris Virginica (+)')
 sub_fig.scatter([pni[0] for pni in plot_neg], [pni[1] for pni in plot_neg], c='b', marker='+', linewidth=2, label = 'Iris Versicolour (-)')
 
 sub_fig.scatter([ppi[0] for ppi in plot_pos_ind], [ppi[1] for ppi in plot_pos_ind], c='k', marker='o')
