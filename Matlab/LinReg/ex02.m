@@ -40,12 +40,13 @@ plotarDados(X, y);
 fprintf('\nPrograma pausado. Pressione enter para continuar.\n\n');
 pause;
 
+
 %% =================== Parte 2: Gradiente descente ===================
 fprintf('Calculando Gradiente Descente ...\n')
 
 X = [ones(m, 1), data(:,1)]; % Adicionar uma coluna de 1s em x
 theta = zeros(2, 1); % Inicializa parâmetros que serao ajustados
-%theta = ones(2, 1);
+
 % Algumas configuracoes do gradiente descente
 iteracoes = 1500;
 alpha = 0.01;

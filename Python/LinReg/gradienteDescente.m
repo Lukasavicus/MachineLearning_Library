@@ -20,16 +20,8 @@ for iter = 1:num_iter
     %       pode ser crescente. Se for, reduza alpha.
     %
 
-
+    theta = theta - (alpha * (1/m) * (X' * ((X * theta) - y)));
     
-    
-    
-    
-    
-    
-
-
-
     % ============================================================
 
     % Armazena o custo J obtido em cada iteracao do gradiente    

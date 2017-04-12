@@ -20,7 +20,7 @@ D = zeros(m,1); % Inicializa a matriz de distancias D
 %
 
 for i=1:m
-    D(i) = sqrt(sum((X(i,:) - x).^2));
+    D(i) = norm((X(i,:) - x(1,:)),2);
 end
 
 

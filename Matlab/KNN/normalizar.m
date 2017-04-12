@@ -29,15 +29,16 @@ sigma = 1; % inicializa desvio padrao
 %             armazenar em X_norm (base de dados normalizada).
 %
 %
-
-% Devolve um vetor na forma: [(media da coluna 1 de X),(media da coluna 2 de X)]
+%Calcula a media (vetorizada, ou seja, a media de cada coluna)
 mu = mean(X);
-
-% Devolve um vetor na forma: [(desvio padrao da coluna 1 de X),(desvio padrao da coluna 2 de X)]
+%Calcula a media (vetorizada)
 sigma = std(X);
-
-X_norm(:,1) = (X(:,1)- mu(1))/sigma(1); X_norm(:,2) = (X(:,2)- mu(2))/sigma(2);
-
+% Atribui os valores corrigidos
+if(exist('OCTAVE_VERSION', 'builtin'))
+    X_norm = (X - mu) ./ sigma;
+else
+    X_norm = bsxfun(@rdivide, bsxfun(@minus, X,mu), sigma);
+end
 
 % ============================================================
 

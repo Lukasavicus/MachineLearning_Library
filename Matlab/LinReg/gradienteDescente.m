@@ -6,6 +6,7 @@ function [theta, J_historico] = gradienteDescente(X, y, theta, alpha, num_iter)
 % Initializa algumas variaveis uteis
 m = length(y); % numero de exemplos de treinamento
 J_historico = zeros(num_iter, 1);
+
 for iter = 1:num_iter
 
     % ====================== ESCREVA O SEU CODIGO AQUI ====================
@@ -18,8 +19,8 @@ for iter = 1:num_iter
     %       que plota o custo J no decorrer das iteracoes. A linha nunca
     %       pode ser crescente. Se for, reduza alpha.
     %
-    
-    theta = theta - (alpha * ((((X*theta) - y)' * X) / m))';
+
+    theta = theta - (alpha * (1/m) * (X' * ((X * theta) - y)));
     
     % ============================================================
 
@@ -27,4 +28,5 @@ for iter = 1:num_iter
     J_historico(iter) = computarCusto(X, y, theta);
 
 end
+
 end

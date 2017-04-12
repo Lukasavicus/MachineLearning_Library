@@ -29,6 +29,9 @@
 
 ## ======================= Parte 1: Plotando dados =======================
 import csv
+import plotarDados as pd
+import computarCusto as cc
+import gradienteDescente as gd
 
 #fprint('Plotando dados ...\n')
 print('Plotando dados ...\n')
@@ -44,7 +47,7 @@ m = len(y); # numero de exemplos de treinamento
 
 # Plotando os Dados
 # VOCE PRECISA COMPLETAR O CODIGO PLOTARDADOS.M
-plotarDados(X, y);
+pd.plotarDados(X, y);
 
 #fprint('\nPrograma pausado. Pressione enter para continuar.\n\n');
 #pause;
@@ -65,7 +68,7 @@ alpha = 0.01;
 
 # calcula e exibe o custo inicial
 # VOCE PRECISA COMPLETAR O CODIGO COMPUTARCUSTO.M
-J = computarCusto(X, y, theta);
+J = cc.computarCusto(X, y, theta);
 #fprint('Custo inicial: ');
 print('Custo inicial: ')
 #fprint('#f\n', J);
@@ -73,7 +76,7 @@ print('%f\n' % J)
 
 # chama o metodo do gradiente descente
 # VOCE PRECISA COMPLETAR O CODIGO GRADIENTEDESCENTE.M
-[theta, J_historico] = gradienteDescente(X, y, theta, alpha, iteracoes);
+[theta, J_historico] = gd.gradienteDescente(X, y, theta, alpha, iteracoes);
 
 # imprime o valor de Theta
 #fprint('Theta encontrado pelo gradiente descendente: ');

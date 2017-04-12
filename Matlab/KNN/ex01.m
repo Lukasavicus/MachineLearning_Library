@@ -181,7 +181,7 @@ sigma = 1; % inicializa desvio padrao
 
 %  Definicao de outro caso de teste.
 %-------------------
-x_teste = [5.90 2.84]; %Voce pode testar outros valores
+x_teste = [6.20 3.40]; %Voce pode testar outros valores
 %-------------------
 
 fprintf('\n\nPlotanto caso de teste: [%2.4f %2.4f].\n', x_teste(1,1), x_teste(1,2));
@@ -200,7 +200,7 @@ pause;
 
 %  Define a quantidade de vizinhos. Recomenda-se que seja impar (1, 3, ou 5)
 %-----
-K = 1; %Voce pode testar outros valores
+K = 3; %Voce pode testar outros valores
 %-----
 
 %  Chama o algoritmo do k-vizinhos para predizer o rotulo da amostra teste.

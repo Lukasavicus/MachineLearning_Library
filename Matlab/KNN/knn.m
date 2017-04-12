@@ -35,30 +35,11 @@ ind_viz = ones(K,1);  % Inicializa indices (linhas) em X das K amostras mais
 
 %  Calcula a distancia entre a amostra de teste x e cada amostra de X. Voce
 %  devera completar essa funcao.
-[m,n] = size(X);
+D = distancia(x, X);
 
-D = zeros(m,2);
-D(:,1) = distancia(x, X);
-D(:,2) = Y;
-
-D = sortrows(D, 1);
-
-vote_zero = 0;
-vote_one = 0;
-
-for i = 1 : K
-    if D(i,2) == 0
-        vote_zero = vote_zero + 1;
-    else
-        vote_one = vote_one + 1;
-    end
-end
-
-if(vote_zero > vote_one)
-    y = 0;
-else
-    y = 1;
-end
+[aux, idx] = sort(D);
+ind_viz = idx(1:K);
+y = ((sum(Y(ind_viz))) > (K/2));
 
 % =========================================================================
 
