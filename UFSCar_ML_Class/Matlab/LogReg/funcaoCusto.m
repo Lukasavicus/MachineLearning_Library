@@ -1,7 +1,7 @@
-function [J, grad] = funcaoCustoReg(theta, X, y, lambda)
-%FUNCAOCUSTOREG Calcula o custo da regressao logistica com regularizacao
-%   J = FUNCAOCUSTOREG(theta, X, y, lambda) calcula o custo de usar theta 
-%   como parametros da regressao logistica para ajustar os dados de X e y 
+function [J, grad] = funcaoCusto(theta, X, y)
+%FUNCAOCUSTO Calcula o custo da regressao logistica
+%   J = FUNCAOCUSTO(X, y, theta) calcula o custo de usar theta como 
+%   parametro da regressao logistica para ajustar os dados de X e y
 
 % Initializa algumas variaveis uteis
 m = length(y); % numero de exemplos de treinamento
@@ -19,16 +19,8 @@ grad = zeros(size(theta));
 % Obs: grad deve ter a mesma dimensao de theta
 %
 
-    knob = (lambda/2*m) * sum(theta .^ 2) - (theta(1) ^ 2);
-
-    s = ((-y) .* log(sigmoid(X * theta)) - (1-y) .* log(1-sigmoid(X * theta)));    
-    J = (sum(s)/m) + knob;
-
-    grad = (((((sigmoid(X * theta))- y)') * X) /m) + (((lambda/m) * theta)') - (((lambda/m) * theta(1))');
-
-
-
-
+J = -(1/m) * ((y' * log(sigmoid(X*theta))) + ((1 - y') * log(1 - sigmoid(X*theta))));
+grad = (1/m) * (X' * (sigmoid(X * theta) - y));
 
 % =============================================================
 

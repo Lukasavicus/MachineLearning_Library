@@ -1,6 +1,6 @@
 %% Universidade Federal de Sao Carlos - UFSCar, Sorocaba
 %
-%  Disciplina: Aprendizado de M·quina
+%  Disciplina: Aprendizado de M√°quina
 %  Prof. Tiago A. Almeida
 %
 %  Exercicio 2 - Regressao Linear
@@ -45,7 +45,7 @@ pause;
 fprintf('Calculando Gradiente Descente ...\n')
 
 X = [ones(m, 1), data(:,1)]; % Adicionar uma coluna de 1s em x
-theta = zeros(2, 1); % Inicializa par‚metros que serao ajustados
+theta = zeros(2, 1); % Inicializa par√¢metros que serao ajustados
 
 % Algumas configuracoes do gradiente descente
 iteracoes = 1500;

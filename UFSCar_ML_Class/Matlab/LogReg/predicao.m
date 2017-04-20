@@ -14,11 +14,9 @@ p = zeros(m, 1);
 %               os paramentros ajustados pela regressao logistica. 
 %               p devera ser um vetor composto por 0's e 1's
 %
-    for i = 1:m
-        if(sigmoid(X(i,:) * theta) >= 0.5)
-            p(i) = 1;
-        end
-    end
+
+p = sigmoid(X * theta) >= 0.5;
+
 % =========================================================================
 
 

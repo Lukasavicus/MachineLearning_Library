@@ -29,12 +29,9 @@ def plotarDados(x, y):
 
 	sub_fig.scatter(x, y, c='b', marker='x')
 
-	plt.xlabel('Populacao');
-	plt.ylabel('Resultado orcamentario');
+	plt.xlabel('Populacao (x 10.000 pessoas)');
+	plt.ylabel('Resultado orcamentario (x R$ 100.000)');
 
 	plt.title('Plot 2D da base de dados Populacao x Resultado Orcamentario')
-	#plt.legend(loc='upper left')
-
-	#plt.scatter([plot_pos[:][0], plot_neg[:][0]], [plot_pos[:][1], plot_neg[:][1]], c=['r', 'b'])
 
 	plt.show()
