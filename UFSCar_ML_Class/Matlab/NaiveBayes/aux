@@ -1,0 +1,24 @@
+[qnt, classes] = hist(Y,unique(Y));
+elem = size(Y,1);
+pclasses = qnt ./ elem;
+
+[m n] = size(X);
+k = size(classes, 2);
+psamples = zeros(m,n);
+for i=1:m
+	for j=1:n
+		psamples(i,j) = sum(X(:,j)==X(i,j)) / size(X(:,j),1);
+	end
+end
+
+
+for
+
+
+[m n] = size(xis);
+psamples = zeros(m,n);
+for i=1:m
+	for j=1:n
+		psamples(i,j) = sum(xis(:,j)==xis(i,j)) / size(xis(:,j),1);
+	end
+end
